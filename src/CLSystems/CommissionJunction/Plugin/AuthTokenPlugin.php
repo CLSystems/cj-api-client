@@ -12,8 +12,12 @@ use GuzzleHttp\Event\ErrorEvent;
 use GuzzleHttp\Event\SubscriberInterface;
 use GuzzleHttp\Event\BeforeEvent;
 
-
-class AuthTokenPlugin implements  SubscriberInterface
+/**
+ * Class AuthTokenPlugin
+ *
+ * @package CLSystems\CommissionJunction\Plugin
+ */
+class AuthTokenPlugin implements SubscriberInterface
 {
     private $auth_token;
 

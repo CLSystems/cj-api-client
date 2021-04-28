@@ -11,6 +11,11 @@ namespace CLSystems\CommissionJunction;
 use GuzzleHttp\Client as GuzzleClient;
 use CLSystems\CommissionJunction\Plugin\AuthTokenPlugin;
 
+/**
+ * Class Client
+ *
+ * @package CLSystems\CommissionJunction
+ */
 class Client extends GuzzleClient
 {
 	protected $base_url = "https://{subdomain}.api.cj.com/{version}/";
