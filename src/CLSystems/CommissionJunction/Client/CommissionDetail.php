@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ian
- * Date: 12/19/14
- * Time: 1:02 PM
- */
 
 namespace CLSystems\CommissionJunction\Client;
 

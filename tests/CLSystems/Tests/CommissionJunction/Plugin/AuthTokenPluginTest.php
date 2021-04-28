@@ -1,16 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ian
- * Date: 12/18/14
- * Time: 5:27 PM
- */
 
+namespace CLSystems\Tests\CommissionJunction\Plugin;
 
-namespace Nmrkt\Tests\CommissionJunction\Plugin;
-
-use Nmrkt\Tests\ClientTestCase;
-use Nmrkt\CommissionJunction\Plugin\AuthTokenPlugin as Plugin;
+use CLSystems\Tests\ClientTestCase;
+use CLSystems\CommissionJunction\Plugin\AuthTokenPlugin as Plugin;
+use GuzzleHttp\Stream\Stream;
 
 class AuthTokenPluginTest extends ClientTestCase
 {
@@ -49,7 +43,7 @@ class AuthTokenPluginTest extends ClientTestCase
     public function testAuthTokenIsAddedToHeader()
     {
         //add the mock to fake a response
-        $this->addClientMock(new \GuzzleHttp\Stream\Stream(fopen(RESOURCE_PATH . '/commission-detail-response.xml', 'r')));
+        $this->addClientMock(new Stream(fopen(RESOURCE_PATH . '/commission-detail-response.xml', 'r')));
 
         //get the mocked subscriber from parent and attach
         $this->cj_client->getEmitter()->attach($this->getMockObject());

@@ -1,14 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ian
- * Date: 12/19/14
- * Time: 4:17 PM
- */
 
-namespace Nmrkt\Tests;
+namespace CLSystems\Tests;
 
-use Nmrkt\CommissionJunction\Client;
+use CLSystems\CommissionJunction\Client;
 use GuzzleHttp\Subscriber\Mock;
 use GuzzleHttp\Message\Response;
 use GuzzleHttp\Subscriber\History;

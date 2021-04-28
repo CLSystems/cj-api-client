@@ -1,15 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ian
- * Date: 12/19/14
- * Time: 1:04 PM
- */
 
-namespace Nmrkt\Tests\CommissionJunction\Client;
+namespace CLSystems\Tests\CommissionJunction\Client;
 
-use Nmrkt\Tests\ClientTestCase;
-use Nmrkt\CommissionJunction\Client\CommissionDetail;
+use CLSystems\Tests\ClientTestCase;
+use CLSystems\CommissionJunction\Client\CommissionDetail;
+use GuzzleHttp\Stream\Stream;
 
 class CommissionDetailTest extends ClientTestCase
 {
@@ -30,7 +25,7 @@ class CommissionDetailTest extends ClientTestCase
     public function testGetPostingsSetsFullRequestCorrectly()
     {
         //add the mock to fake a response
-        $this->addClientMock(new \GuzzleHttp\Stream\Stream(fopen(RESOURCE_PATH . '/commission-detail-response.xml', 'r')));
+        $this->addClientMock(new Stream(fopen(RESOURCE_PATH . '/commission-detail-response.xml', 'r')));
 
         //get the mocked subscriber from parent and attach
         $this->cj_client->getEmitter()->attach($this->getMockObject());
@@ -53,7 +48,7 @@ class CommissionDetailTest extends ClientTestCase
     public function testGetPostingsReturnsSimpleXmlElement()
     {
         //add the mock to fake a response
-        $this->addClientMock(new \GuzzleHttp\Stream\Stream(fopen(RESOURCE_PATH . '/commission-detail-response.xml', 'r')));
+        $this->addClientMock(new Stream(fopen(RESOURCE_PATH . '/commission-detail-response.xml', 'r')));
 
         //get the mocked subscriber from parent and attach
         $this->cj_client->getEmitter()->attach($this->getMockObject());
@@ -66,7 +61,7 @@ class CommissionDetailTest extends ClientTestCase
     public function testGetEventsSetsFullRequestCorrectly()
     {
         //add the mock to fake a response
-        $this->addClientMock(new \GuzzleHttp\Stream\Stream(fopen(RESOURCE_PATH . '/commission-detail-response.xml', 'r')));
+        $this->addClientMock(new Stream(fopen(RESOURCE_PATH . '/commission-detail-response.xml', 'r')));
 
         //get the mocked subscriber from parent and attach
         $this->cj_client->getEmitter()->attach($this->getMockObject());
@@ -89,7 +84,7 @@ class CommissionDetailTest extends ClientTestCase
     public function testGetEventsReturnsSimpleXmlElement()
     {
         //add the mock to fake a response
-        $this->addClientMock(new \GuzzleHttp\Stream\Stream(fopen(RESOURCE_PATH . '/commission-detail-response.xml', 'r')));
+        $this->addClientMock(new Stream(fopen(RESOURCE_PATH . '/commission-detail-response.xml', 'r')));
 
         //get the mocked subscriber from parent and attach
         $this->cj_client->getEmitter()->attach($this->getMockObject());
@@ -103,7 +98,7 @@ class CommissionDetailTest extends ClientTestCase
     public function testGetItemDetailSetsFullRequestCorrectly()
     {
         //add the mock to fake a response
-        $this->addClientMock(new \GuzzleHttp\Stream\Stream(fopen(RESOURCE_PATH . '/item-detail-response.xml', 'r')));
+        $this->addClientMock(new Stream(fopen(RESOURCE_PATH . '/item-detail-response.xml', 'r')));
 
         //get the mocked subscriber from parent and attach
         $this->cj_client->getEmitter()->attach($this->getMockObject());
@@ -123,7 +118,7 @@ class CommissionDetailTest extends ClientTestCase
     public function testGetItemDetailReturnsSimpleXmlElement()
     {
         //add the mock to fake a response
-        $this->addClientMock(new \GuzzleHttp\Stream\Stream(fopen(RESOURCE_PATH . '/item-detail-response.xml', 'r')));
+        $this->addClientMock(new Stream(fopen(RESOURCE_PATH . '/item-detail-response.xml', 'r')));
 
         //get the mocked subscriber from parent and attach
         $this->cj_client->getEmitter()->attach($this->getMockObject());

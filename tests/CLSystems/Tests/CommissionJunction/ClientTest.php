@@ -1,17 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ian
- * Date: 12/18/14
- * Time: 1:33 PM
- */
 
-namespace Nmrkt\Tests\CommissionJunction;
+namespace CLSystems\Tests\CommissionJunction;
 
-use Nmrkt\CommissionJunction\Client as Client;
-use Nmrkt\Tests\ClientTestCase;
+use CLSystems\CommissionJunction\Client as Client;
+use CLSystems\Tests\ClientTestCase;
 use GuzzleHttp\Exception\ServerException;
 use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Stream\Stream;
 
 class ClientTest extends ClientTestCase
 {
@@ -39,7 +34,7 @@ class ClientTest extends ClientTestCase
     public function testExceptionIsThrownOnErrorResponse()
     {
 
-        $this->addClientMock(new \GuzzleHttp\Stream\Stream(fopen(RESOURCE_PATH . '/commission-detail-response.xml', 'r')), 500);
+        $this->addClientMock(new Stream(fopen(RESOURCE_PATH . '/commission-detail-response.xml', 'r')), 500);
 
         $this->cj_client->getEmitter()->attach($this->getMockObject());
 
@@ -56,7 +51,7 @@ class ClientTest extends ClientTestCase
     public function testExceptionIsThrownOnBadRequestResponse()
     {
 
-        $this->addClientMock(new \GuzzleHttp\Stream\Stream(fopen(RESOURCE_PATH . '/commission-detail-response.xml', 'r')), 400);
+        $this->addClientMock(new Stream(fopen(RESOURCE_PATH . '/commission-detail-response.xml', 'r')), 400);
 
         $this->cj_client->getEmitter()->attach($this->getMockObject());
 
